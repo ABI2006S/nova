@@ -14,10 +14,10 @@ const features = [
 ]
 
 const stats = [
-  { to: 120, suffix: "+", label: "Projects Completed" },
+  { to: 50, suffix: "+", label: "Projects Completed" },
   { to: 98, suffix: "%", label: "Client Satisfaction" },
-  { to: 40, suffix: "+", label: "Team Experts" },
-  { to: 12, suffix: "", label: "Industries Served" },
+  { to: 10, suffix: "+", label: "Team Experts" },
+  { to: 2, suffix: "", label: "Years of Experience" },
 ]
 
 export function WhyChoose() {
@@ -35,7 +35,7 @@ export function WhyChoose() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-20px" }}
           className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {features.map((f) => (

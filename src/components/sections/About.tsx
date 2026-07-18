@@ -47,7 +47,7 @@ export function About() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, margin: "-80px" }}
+            viewport={{ once: true, margin: "-20px" }}
             className="mt-10 flex flex-col gap-5"
           >
             {pillars.map((p) => (
@@ -77,10 +77,10 @@ export function About() {
 
           <div className="relative grid h-full grid-cols-2 gap-4">
             {[
-              { k: "2017", v: "Founded" },
-              { k: "120+", v: "Projects" },
-              { k: "40+", v: "Experts" },
-              { k: "12", v: "Industries" },
+              { k: "2024", v: "Founded" },
+              { k: "50+", v: "Projects" },
+              { k: "10", v: "Experts" },
+              { k: "3", v: "Freelancers" },
             ].map((b, i) => (
               <motion.div
                 key={b.v}

@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react"
 import { useInView } from "framer-motion"
+import { radialGradient } from "framer-motion/m"
 
 interface CounterProps {
   to: number
@@ -27,7 +28,6 @@ export function Counter({ to, suffix = "", prefix = "", duration = 1600, classNa
     raf = requestAnimationFrame(tick)
     return () => cancelAnimationFrame(raf)
   }, [inView, to, duration])
-
   return (
     <span ref={ref} className={className}>
       {prefix}

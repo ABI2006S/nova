@@ -50,31 +50,39 @@ export function Services() {
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
+          viewport={{ once: true, margin: "-20px" }}
           className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3"
         >
           {services.map((s) => (
-            <motion.article
+            <a
               key={s.title}
-              variants={fadeUp}
-              whileHover={{ y: -8 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              className="group relative overflow-hidden rounded-2xl border border-border bg-background p-7 shadow-soft transition-shadow hover:shadow-glow"
+              href="#contact"
+              onClick={() => {
+                window.dispatchEvent(new CustomEvent("select-service", { detail: s.title }))
+              }}
+              className="group block"
             >
-              <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-glow/0 blur-2xl transition-all duration-500 group-hover:bg-glow/40" />
+              <motion.article
+                variants={fadeUp}
+                whileHover={{ y: -8 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="relative h-full overflow-hidden rounded-2xl border border-border bg-background p-7 shadow-soft transition-all duration-300 hover:border-primary/20 hover:shadow-glow"
+              >
+                <div className="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-glow/0 blur-2xl transition-all duration-500 group-hover:bg-glow/40" />
 
-              <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
-                <s.icon className="h-6 w-6" />
-              </div>
+                <div className="relative flex h-12 w-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-transform duration-300 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground">
+                  <s.icon className="h-6 w-6" />
+                </div>
 
-              <h3 className="relative mt-6 font-display text-xl font-bold text-foreground">{s.title}</h3>
-              <p className="relative mt-3 text-sm leading-relaxed text-muted">{s.desc}</p>
+                <h3 className="relative mt-6 font-display text-xl font-bold text-foreground">{s.title}</h3>
+                <p className="relative mt-3 text-sm leading-relaxed text-muted">{s.desc}</p>
 
-              <div className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
-                Learn more
-                <ArrowUpRight className="h-4 w-4" />
-              </div>
-            </motion.article>
+                <div className="relative mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-primary opacity-0 transition-all duration-300 group-hover:opacity-100">
+                  Get Started
+                  <ArrowUpRight className="h-4 w-4" />
+                </div>
+              </motion.article>
+            </a>
           ))}
         </motion.div>
       </div>

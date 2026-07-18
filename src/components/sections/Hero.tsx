@@ -24,14 +24,6 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-5 sm:gap-14 md:px-8 lg:grid-cols-[minmax(0,1fr)_minmax(360px,560px)] lg:gap-10">
         <motion.div variants={container} initial="hidden" animate="visible" className="flex min-w-0 flex-col items-start">
-          <motion.span
-            variants={item}
-            className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-medium text-primary"
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-            Premium Digital Agency
-          </motion.span>
-
           <motion.h1
             variants={item}
             className="mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl"
@@ -62,9 +54,9 @@ export function Hero() {
 
           <motion.div variants={item} className="mt-10 grid w-full max-w-xl grid-cols-3 gap-3 sm:mt-12 sm:gap-6">
             {[
-              { value: "120+", label: "Projects Delivered" },
+              { value: "50+", label: "Projects Delivered" },
               { value: "98%", label: "Client Retention" },
-              { value: "8+", label: "Years Experience" },
+              { value: "2+", label: "Years Experience" },
             ].map((stat) => (
               <div key={stat.label} className="min-w-0">
                 <div className="font-display text-xl font-bold text-foreground sm:text-2xl">{stat.value}</div>

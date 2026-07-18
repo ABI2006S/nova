@@ -4,13 +4,13 @@ import type { ReactNode } from "react"
 const easeOut = [0.22, 1, 0.36, 1] as const
 
 export const fadeUp: Variants = {
-  hidden: { opacity: 0, y: 28 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.7, ease: easeOut } },
+  hidden: { opacity: 0, y: 12 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.45, ease: easeOut } },
 }
 
 export const staggerContainer: Variants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.12, delayChildren: 0.05 } },
+  visible: { transition: { staggerChildren: 0.08, delayChildren: 0.02 } },
 }
 
 interface RevealProps {
@@ -18,7 +18,6 @@ interface RevealProps {
   className?: string
   delay?: number
   align?: "left" | "center" | "right"
-  /** When true, children animate with stagger using fadeUp on each direct motion child */
   stagger?: boolean
   as?: "div" | "section" | "ul" | "li" | "span"
 }
@@ -33,7 +32,7 @@ export function Reveal({ children, className, delay = 0, stagger = false, as = "
         variants={staggerContainer}
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true, margin: "-80px" }}
+        viewport={{ once: true, margin: "-20px" }}
       >
         {children}
       </MotionTag>
@@ -46,7 +45,7 @@ export function Reveal({ children, className, delay = 0, stagger = false, as = "
       variants={fadeUp}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: true, margin: "-20px" }}
       transition={{ delay }}
     >
       {children}
