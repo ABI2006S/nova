@@ -1,4 +1,4 @@
-const techs = ["React", "TypeScript", "Tailwind", "Next.js", "Vercel", "Figma", "Supabase", "Framer"]
+const techs = ["Web Apps", "Landing Pages", "Dashboards", "E-commerce", "CMS", "SEO", "Performance", "Deployment"]
 
 export function Trust() {
   const row = [...techs, ...techs]
